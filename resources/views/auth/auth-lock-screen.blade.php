@@ -23,9 +23,10 @@
                       </div>
                       <div class="card-content">
                           <div class="card-body pt-1">
-                              <form action="dashboard-analytics">
+                            {!! Form::open(['action'=> 'LockScreenController@unlock' , 'method'=> 'POST' , 'enctype' => 'multipart/form-data']) !!}
+                            @csrf
                                   <fieldset class="form-label-group position-relative has-icon-left">
-                                      <input type="text" class="form-control" id="user-name" placeholder="Username" required>
+                                      <input type="text" class="form-control" value= "{{auth()->user()->username}}" iid="disabledInput" disabled placeholder="Username" required>
                                       <div class="form-control-position">
                                           <i class="feather icon-user"></i>
                                       </div>
@@ -33,15 +34,15 @@
                                   </fieldset>
 
                                   <fieldset class="form-label-group position-relative has-icon-left">
-                                      <input type="password" class="form-control" id="user-password" placeholder="Password" required>
+                                      <input name="password" type="password" class="form-control"  placeholder="Password" required>
                                       <div class="form-control-position">
                                           <i class="feather icon-lock"></i>
                                       </div>
                                       <label for="user-password">Password</label>
                                   </fieldset>
-                                  <a href="auth-login">Are you not John Doe ?</a>
+                                  <a href="login">Are you not {{auth()->user()->name}} ?</a>
                                   <button type="submit" class="btn btn-primary float-right">Unlock</button>
-                              </form>
+                              {!! Form::close() !!}
                           </div>
                       </div>
                   </div>
@@ -50,4 +51,8 @@
       </div>
   </div>
 </section>
+@endsection
+@section('page-script')
+        <!-- Page js files -->
+        <script src="{{ asset(mix('js/scripts/forms/form-tooltip-valid.js')) }}"></script>
 @endsection
