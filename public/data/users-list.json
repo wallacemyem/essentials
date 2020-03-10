@@ -1,0 +1,26 @@
+[{
+    "id": 269,
+    "username": "demodulation463",
+    "avatar": "images/portrait/small/avatar-s-2.jpg",
+    "email": "rubi@ortwein.com",
+    "name": "Rubi Ortwein",
+    "country": "Syria",
+    "role": "user",
+    "status": "blocked",
+    "is_verified": false,
+    "department": "development"
+  },
+  {
+    "id": 270,
+    "username": "undivorced341",
+    "avatar": "images/portrait/small/avatar-s-3.jpg",
+    "email": "donnette@charania.com",
+    "name": "Donnette Charania",
+    "country": "Iraq",
+    "role": "staff",
+    "status": "deactivated",
+    "is_verified": true,
+    "department": "sales"
+  }
+
+]
