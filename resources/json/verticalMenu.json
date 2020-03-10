@@ -1,0 +1,12 @@
+{"menu": [
+  {"url":"dashboard", "name":"Home", "slug":"dashboard", "icon":"feather icon-home", "i18n":"admin.dashboard"},
+  {"url":"task", "name":"Task", "slug":"task", "icon":"feather icon-zap", "i18n":"admin.task"},
+
+  {"url":"","navheader":"Apps","icon":""},
+    {"url":"docs", "name":"Documents", "icon":"feather icon-folder", "i18n":"admin.docs"},
+    {"url":"times", "name":"Timetable", "icon":"feather icon-life-buoy", "i18n":"admin.times"},
+
+  {"url":"","navheader":"Account","icon":""},
+    {"url":"account", "name":"Settings", "slug":"account", "icon":"feather icon-crosshair", "i18n":"admin.account-settings"}
+
+]}
