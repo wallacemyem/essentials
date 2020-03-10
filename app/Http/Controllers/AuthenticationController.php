@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Illuminate\Console\AppNamespaceDetectorTrait;
 use DB;
 
 class AuthenticationController extends Controller
 {
     // Login
     public function login(){
+        $name = $this->getAppNamespace();
         $pageConfigs = [
             'bodyClass' => "bg-full-screen-image",
             'blankPage' => true
@@ -16,7 +18,7 @@ class AuthenticationController extends Controller
 
         return view('/auth/login', [
             'pageConfigs' => $pageConfigs
-        ]);
+        ])->with('name', $name);
     }
 
     // Register

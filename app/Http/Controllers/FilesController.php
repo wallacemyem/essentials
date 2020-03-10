@@ -56,25 +56,34 @@ class FilesController extends Controller
       $update->disk = $filesize;
       if($fileExtension == 'jpg'){
         $update->icon = 'image';
+        $update->cover = 'images/file/png.png';
           }elseif($fileExtension == 'png'){
             $update->icon = 'image';
+            $update->cover = 'images/file/png.png';
           }elseif($fileExtension == 'pdf'){
             $update->icon = 'pdf';
+            $update->cover = 'images/file/pdf.png';
           }elseif($fileExtension == 'docx'){
             $update->icon = 'word';
+            $update->cover = 'images/file/docx.png';
           }elseif($fileExtension == 'pptx'){
             $update->icon = 'powerpoint';
+            $update->cover = 'images/file/pptx.png';
           }elseif($fileExtension == 'xls'){
             $update->icon = 'excel';
+            $update->cover = 'images/file/xls.png';
           }elseif($fileExtension == 'zip'){
             $update->icon = 'archive';
+            $update->cover = 'images/file/zip.png';
           }elseif($fileExtension == 'mp3'){
             $update->icon = 'audio';
+            $update->cover = 'images/file/audio.png';
           }elseif($fileExtension == 'nofile'){
             $update->icon = 'code';
+            $update->cover = 'images/file/nofile.png';
       }
       $update->attachable_type = $fileExtension;
-      $update->attachable_id = auth()->user()->id;
+      $update->user_id = auth()->user()->id;
       $update->save();
       //auth()->user()->update(['name' => $request->get('name')]);
         //return $request->get('email');

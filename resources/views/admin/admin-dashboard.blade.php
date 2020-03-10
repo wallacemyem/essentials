@@ -274,7 +274,7 @@ function checkTime(i) {
     <div class="col-xl-4 col-md-6 col-sm-12">
       <div class="card">
         <div class="card-content">
-          <img class="card-img-top img-fluid" src="{{ asset('images/pages/content-img-1.jpg') }}"
+          <img class="card-img-top img-fluid" src="{{$file->cover }}"
             alt="Card image cap">
           <div class="card-body">
             <h5>{{$file->field}}</h5>

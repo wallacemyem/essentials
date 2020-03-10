@@ -20,11 +20,11 @@ class AdminController extends Controller
     //admin dashboard
     public function dashboard(){
 
-        $users = User::orderBy('created_at', 'asc')->get();
+        $users = User::orderBy('created_at', 'desc')->get();
         $hour = Carbon::now('Africa/Lagos')->isoFormat('h:mm a');
         $la = Carbon::now('Africa/Lagos')->isoFormat('a');
         //$file = DB::table('users')->where('name', 'Aboiyar')->first();
-        $file = Docs::orderBy('created_at', 'asc')->first();
+        $file = Docs::orderBy('created_at', 'desc')->first();
         $pageConfigs = [
             'pageHeader' => false
         ];
