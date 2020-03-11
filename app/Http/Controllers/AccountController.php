@@ -37,8 +37,8 @@ class AccountController extends Controller
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
-        $filenameToStore = $user.'_'.time().'.'.$extension;
-        $path = $request->file('profile_image')->storeAs('public/profile_image', $filenameToStore);
+        $filenameToStore = $user.'.'.$extension;
+        $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
       }
@@ -54,6 +54,10 @@ class AccountController extends Controller
       //auth()->user()->update(['name' => $request->get('name')]);
         //return $request->get('email');
         return redirect('account');
+    }
+
+    public function approveuser($id){
+
     }
 
     /**

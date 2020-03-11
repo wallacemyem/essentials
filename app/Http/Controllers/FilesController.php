@@ -84,10 +84,11 @@ class FilesController extends Controller
       }
       $update->attachable_type = $fileExtension;
       $update->user_id = auth()->user()->id;
+      $update->slug = str_slug($request->name);
       $update->save();
       //auth()->user()->update(['name' => $request->get('name')]);
         //return $request->get('email');
-        return redirect('docs');
+        return redirect('docs')->with('success', __('File Uploaded!'));
     }
 
     public function files(Request $request){
