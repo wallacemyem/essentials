@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Requests\TaskRequest;
 use App\Task;
 use Illuminate\Http\Request;
 use Sentinel;
-//use Yajra\DataTables\DataTables;
+use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
 
 class TaskController extends Controller
@@ -53,16 +53,11 @@ class TaskController extends Controller
      */
     public function data()
     {
-        $task = Task::orderBy('title', 'desc')->get();
-            $pageConfigs = [
-                'pageHeader' => false,
-                'contentLayout' => "content-left-sidebar",
-                'bodyClass' => 'todo-application',
-            ];
-
-              return view('/admin/task', [
-                  'pageConfigs' => $pageConfigs
-              ])->with('task' , $task);
+        return Task::where('user_id', Sentinel::getUser()->id)
+            ->orderBy('finished', 'ASC')
+            ->orderBy('task_deadline', 'DESC')
+            ->get()
+            ->toArray();
 
     }
 }
