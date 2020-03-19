@@ -53,11 +53,7 @@ class TaskController extends Controller
      */
     public function data()
     {
-        $task = Task::where('user_id', Sentinel::getUser()->id)
-            ->orderBy('finished', 'ASC')
-            ->orderBy('task_deadline', 'DESC')
-            ->get()
-            ->toArray();
+        $task = Task::orderBy('title', 'desc')->get();
       $pageConfigs = [
                 'pageHeader' => false,
                 'contentLayout' => "content-left-sidebar",
