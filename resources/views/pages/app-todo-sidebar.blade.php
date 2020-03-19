@@ -37,9 +37,10 @@
 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
   <div class="modal-content">
     <section class="todo-form">
-      <form id="form-add-todo" class="todo-input">
+      {!! Form::open(['action'=> 'TaskController@store' , 'method'=> 'POST' , 'enctype' => 'multipart/form-data']) !!}
+      @csrf
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -55,61 +56,40 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="todoLabel">
                   <div class="dropdown-item">
                     <div class="vs-checkbox-con">
-                        <input type="checkbox" data-color="primary" data-value="Frontend">
+                        <input type="checkbox" data-color="primary" data-value="Assignment">
                         <span class="vs-checkbox">
                           <span class="vs-checkbox--check">
                             <i class="vs-icon feather icon-check mr-0"></i>
                           </span>
                         </span>
-                        <span>Frontend</span>
+                        <span>Assignment</span>
                     </div>
                   </div>
                   <div class="dropdown-item">
                     <div class="vs-checkbox-con">
-                        <input type="checkbox" data-color="warning" data-value="Backend">
+                        <input type="checkbox" data-color="success" data-value="Report">
                         <span class="vs-checkbox">
                           <span class="vs-checkbox--check">
                             <i class="vs-icon feather icon-check mr-0"></i>
                           </span>
                         </span>
-                        <span>Backend</span>
+                        <span>Report</span>
                     </div>
                   </div>
-                  <div class="dropdown-item">
-                    <div class="vs-checkbox-con">
-                        <input type="checkbox" data-color="success" data-value="Doc">
-                        <span class="vs-checkbox">
-                          <span class="vs-checkbox--check">
-                            <i class="vs-icon feather icon-check mr-0"></i>
-                          </span>
-                        </span>
-                        <span>Doc</span>
-                    </div>
-                  </div>
-                  <div class="dropdown-item">
-                    <div class="vs-checkbox-con">
-                        <input type="checkbox" data-color="danger" data-value="Bug">
-                        <span class="vs-checkbox">
-                          <span class="vs-checkbox--check">
-                            <i class="vs-icon feather icon-check mr-0"></i>
-                          </span>
-                        </span>
-                        <span>Bug</span>
-                    </div>
-                  </div>
+
                 </div>
               </div>
           </div>
           <fieldset class="form-group">
-            <input type="text" class="new-todo-item-title form-control" placeholder="Title">
+            <input type="text" name="title" class="new-todo-item-title form-control" placeholder="Title">
           </fieldset>
           <fieldset class="form-group">
-              <textarea class="new-todo-item-desc form-control" rows="3" placeholder="Add description"></textarea>
+              <textarea class="new-todo-item-desc form-control" name="desc" rows="3" placeholder="Add description"></textarea>
           </fieldset>
         </div>
         <div class="modal-footer">
           <fieldset class="form-group position-relative has-icon-left mb-0">
-            <button type="button" class="btn btn-primary add-todo-item" data-dismiss="modal"><i class="feather icon-check d-block d-lg-none"></i>
+            <button type="submit" class="btn btn-primary add-todo-item" data-dismiss="submit"><i class="feather icon-check d-block d-lg-none"></i>
               <span class="d-none d-lg-block">Add Task</span></button>
           </fieldset>
           <fieldset class="form-group position-relative has-icon-left mb-0">
@@ -117,7 +97,7 @@
               <span class="d-none d-lg-block">Cancel</span></button>
           </fieldset>
         </div>
-      </form>
+      {!! Form::close() !!}
     </section>
   </div>
 </div>

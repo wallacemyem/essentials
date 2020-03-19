@@ -252,7 +252,7 @@ function checkTime(i) {
           </div>
           <div class="card-content">
             <div class="card-body">
-              <img class="img-fluid" src="profile_image/{{auth()->user()->profile_image}}" alt="img placeholder">
+              <img class="img-fluid" src="storage/profile_image/{{auth()->user()->profile_image}}" alt="{{auth()->user()->name}}">
               <div class="d-flex justify-content-start mt-2">
                 <div class="icon-like mr-2">
                   <i class="feather icon-thumbs-up text-success font-medium-5 align-middle"></i>

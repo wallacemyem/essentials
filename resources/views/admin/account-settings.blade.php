@@ -6,11 +6,13 @@
         <!-- vendor css files -->
         <link rel='stylesheet' href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
         <link rel='stylesheet' href="{{ asset(mix('vendors/css/pickers/pickadate/pickadate.css')) }}">
+        <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.css')) }}">
 @endsection
 @section('page-style')
         <!-- Page css files -->
         <link rel="stylesheet" href="{{ asset(mix('css/plugins/extensions/noui-slider.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/core/colors/palette-noui.css')) }}">
+        <link rel="stylesheet" href="{{ asset(mix('css/plugins/extensions/toastr.css')) }}">
 @endsection
 
 @section('content')
@@ -22,21 +24,21 @@
         <ul class="nav nav-pills flex-column mt-md-0 mt-1">
           <li class="nav-item">
             <a class="nav-link d-flex py-75 active" id="account-pill-general" data-toggle="pill"
-              href="#account-vertical-general" aria-expanded="true">
+              href="#xcdet" aria-expanded="true">
               <i class="feather icon-globe mr-50 font-medium-3"></i>
               General
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link d-flex py-75" id="account-pill-password" data-toggle="pill"
-              href="#account-vertical-password" aria-expanded="false">
+              href="#opksew" aria-expanded="false">
               <i class="feather icon-lock mr-50 font-medium-3"></i>
               Change Password
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link d-flex py-75" id="account-pill-notifications" data-toggle="pill"
-              href="#account-vertical-notifications" aria-expanded="false">
+              href="#ndkosjk" aria-expanded="false">
               <i class="feather icon-message-circle mr-50 font-medium-3"></i>
               Notifications
             </a>
@@ -44,12 +46,21 @@
         </ul>
       </div>
       <!-- right content section -->
+
       <div class="col-md-9">
         <div class="card">
           <div class="card-content">
             <div class="card-body">
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="account-vertical-general"
+                @if (session('status'))
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ session('status') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="feather icon-x-circle"></i></span>
+                  </button>
+                  </div>
+                @endif
+                <div role="tabpanel" class="tab-pane active" id="xcdet"
                   aria-labelledby="account-pill-general" aria-expanded="true">
                   {!! Form::open(['action'=> 'AccountController@update' , 'method'=> 'POST' , 'enctype' => 'multipart/form-data']) !!}
                   @csrf
@@ -105,7 +116,7 @@
                     </div>
                   {!! Form::close() !!}
                 </div>
-                <div class="tab-pane fade " id="account-vertical-password" role="tabpanel"
+                <div class="tab-pane fade " id="opksew" role="tabpanel"
                   aria-labelledby="account-pill-password" aria-expanded="false">
                   {!! Form::open(['action'=> 'AccountController@password' , 'method'=> 'POST' , 'enctype' => 'multipart/form-data']) !!}
                   @csrf
@@ -151,7 +162,7 @@
                   {!! Form::close() !!}
                 </div>
 
-                <div class="tab-pane fade" id="account-vertical-notifications" role="tabpanel"
+                <div class="tab-pane fade" id="ndkosjk" role="tabpanel"
                   aria-labelledby="account-pill-notifications" aria-expanded="false">
                   <div class="row">
                     <h6 class="m-1">Activity</h6>
@@ -227,8 +238,10 @@
         <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.js')) }}"></script>
         <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.date.js')) }}"></script>
         <script src="{{ asset(mix('vendors/js/extensions/dropzone.min.js')) }}"></script>
+        <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
 @endsection
 @section('page-script')
         <!-- Page js files -->
         <script src="{{ asset(mix('js/scripts/pages/account-setting.js')) }}"></script>
+        <script src="{{ asset(mix('js/scripts/extensions/toastr.js')) }}"></script>
 @endsection

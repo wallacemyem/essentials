@@ -38,7 +38,7 @@ class AccountController extends Controller
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
         $filenameToStore = $user.'.'.$extension;
-        $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
+        $path = $request->file('profile_image')->storeAs('public/profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
       }
@@ -53,7 +53,7 @@ class AccountController extends Controller
       $update->save();
       //auth()->user()->update(['name' => $request->get('name')]);
         //return $request->get('email');
-        return redirect('account');
+        return redirect('account')->with('status', 'Profile Updated');
     }
 
     public function approveuser($id){
@@ -61,17 +61,17 @@ class AccountController extends Controller
     }
 
     /**
-     * Change the password
      *
-     * @param  \App\Http\Requests\PasswordRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
+     *to approve users
+     *
+     *
      */
     public function password(Request $request)
     {
 
         auth()->user()->update(['password' => bcrypt($request->conpassword)]);
 
-        return Redirect::to('account');
+        return redirect('account')->with('status', 'Password Updated');;
     }
 
     //admin Login user profile

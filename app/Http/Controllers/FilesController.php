@@ -88,7 +88,7 @@ class FilesController extends Controller
       $update->save();
       //auth()->user()->update(['name' => $request->get('name')]);
         //return $request->get('email');
-        return redirect('docs')->with('success', __('File Uploaded!'));
+        return redirect('docs')->with('status', __('File Uploaded!'));
     }
 
     public function files(Request $request){

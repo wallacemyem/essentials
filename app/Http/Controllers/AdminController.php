@@ -23,6 +23,7 @@ class AdminController extends Controller
         $users = User::orderBy('created_at', 'desc')->get();
         $hour = Carbon::now('Africa/Lagos')->isoFormat('h:mm a');
         $la = Carbon::now('Africa/Lagos')->isoFormat('a');
+        //$dw = response()->download($pathToFile);
         //$file = DB::table('users')->where('name', 'Aboiyar')->first();
         $file = Docs::orderBy('created_at', 'desc')->first();
         $pageConfigs = [
@@ -47,15 +48,7 @@ class AdminController extends Controller
 
     //admin Task
     public function task(){
-      $pageConfigs = [
-          'pageHeader' => false,
-          'contentLayout' => "content-left-sidebar",
-          'bodyClass' => 'todo-application',
-      ];
 
-        return view('/admin/task', [
-            'pageConfigs' => $pageConfigs
-        ]);
     }
 
     //admin Task
@@ -91,7 +84,7 @@ class AdminController extends Controller
 
     //admin Login user profile
     public function mprofile(){
-      // IDEA: just make docs variable
+      // IDEA: just make variable
       $user = auth()->user();
       $date = Carbon::parse($user->created_at)->isoFormat('dddd d MMMM Y');
         $pageConfigs = [

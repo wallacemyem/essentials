@@ -18,6 +18,14 @@
 @section('content')
 {{-- Data list view starts --}}
 <section id="data-list-view" class="data-list-view-header">
+  @if (session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('status') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true"><i class="feather icon-x-circle"></i></span>
+    </button>
+    </div>
+  @endif
     <div class="action-btns d-none">
       <div class="btn-dropdown mr-1 mb-1">
         <div class="btn-group dropdown actions-dropodown">
@@ -28,7 +36,6 @@
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#"><i class="feather icon-trash"></i>Delete</a>
             <a class="dropdown-item" href="#"><i class="feather icon-archive"></i>Archive</a>
-            <a class="dropdown-item" href="#"><i class="feather icon-file"></i>Print</a>
           </div>
         </div>
       </div>
@@ -77,7 +84,7 @@
                 </div>
               </td>
               <td>
-                {{ $product["attachable_id"]}}
+                {{ $product->user->name}}
               </td>
               <td class="product-action">
                 <span class="action-edit"><i class="feather icon-edit"></i></span>
