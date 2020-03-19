@@ -53,11 +53,20 @@ class TaskController extends Controller
      */
     public function data()
     {
-        return Task::where('user_id', Sentinel::getUser()->id)
+        $task = Task::where('user_id', Sentinel::getUser()->id)
             ->orderBy('finished', 'ASC')
             ->orderBy('task_deadline', 'DESC')
             ->get()
             ->toArray();
+      $pageConfigs = [
+                'pageHeader' => false,
+                'contentLayout' => "content-left-sidebar",
+                'bodyClass' => 'todo-application',
+            ];
+              return view('/admin/task', [
+                  'pageConfigs' => $pageConfigs
+              ])->with('task' , $task);
+
 
     }
 }
