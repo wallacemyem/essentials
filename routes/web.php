@@ -32,7 +32,7 @@ Route::view('bb', 'pages.bb');
 Route::post('store' , 'TaskController@store');
 
 // Authentication routes...
-Route::get('login', 'AuthenticationController@login');
+Route::get('/login', 'AuthenticationController@login');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 Route::get('logout', 'AuthController@logout');
