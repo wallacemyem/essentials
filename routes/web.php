@@ -46,7 +46,8 @@ Route::get('plock', 'LockScreenController@viewLockScreen');
 Route::post('unlock', 'LockScreenController@unlock');
 
 //update accountSwitch1
-
+Route::mixin(new \Laravel\Ui\AuthRouteMethods());
+Route::auth(['verify' => true]);
 
 Auth::routes();
 
