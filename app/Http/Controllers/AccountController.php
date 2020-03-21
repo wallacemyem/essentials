@@ -41,7 +41,7 @@ class AccountController extends Controller
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
         $filenameToStore = $user.'.'.$extension;
-        Storage::disk('public')->put($filenameToStore,  File::get($file));
+        Storage::disk('public')->put($user.'.'.$extension,  File::get($file));
         $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
