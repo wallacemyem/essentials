@@ -18,7 +18,7 @@ class AuthenticationController extends Controller
 
         return view('/auth/login', [
             'pageConfigs' => $pageConfigs
-        ])->with('name', $name);
+        ]);
     }
 
     // Register
