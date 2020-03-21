@@ -10,7 +10,7 @@ class AuthenticationController extends Controller
 {
     // Login
     public function login(){
-        $name = $this->getAppNamespace();
+        //$name = $this->getAppNamespace();
         $pageConfigs = [
             'bodyClass' => "bg-full-screen-image",
             'blankPage' => true
