@@ -66,7 +66,7 @@
                   @csrf
                   <div class="media">
                     <a href="javascript: void(0);">
-                      <img src="storage/profile_image/{{auth()->user()->profile_image}}" class="rounded mr-75"
+                      <img src="/uploads/{{auth()->user()->profile_image}}" class="rounded mr-75"
                         alt="{{auth()->user()->name}}" height="64" width="64">
                     </a>
                     <div class="media-body mt-75">
