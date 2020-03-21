@@ -90,7 +90,7 @@ class AuthController extends Controller
      * @return [string] message
      */
     public function logout(Request $request) {
-  Auth::logout();
+        Auth::logout();
   return redirect('dashboard');
 }
 
