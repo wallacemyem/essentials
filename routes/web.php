@@ -48,6 +48,6 @@ Route::post('unlock', 'LockScreenController@unlock');
 //update accountSwitch1
 Route::auth(['verify' => true]);
 
-Auth::routes();
+//Auth::routes();
 
 Route::post('/auth-login/validate', 'Auth\LoginController@validate_api');
