@@ -16,7 +16,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
           
-            return view('/auth/login');
+            return away('https://ddfwc.iyogera.com/logon');
         }
     }
 }
