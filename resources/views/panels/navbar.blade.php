@@ -37,10 +37,7 @@
                     </ul>
                 </div>
                 <ul class="nav navbar-nav float-right">
-                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a>
-                        </div>
-                    </li>
+                    
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>
                         <div class="search-input">
@@ -110,7 +107,7 @@
                         </ul>
                     </li>
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{auth()->user()->name}}</span><span class="user-status">Available</span></div><span><img class="round" src="storage/profile_image/{{auth()->user()->profile_image}}" alt="{{auth()->user()->name}}" height="40" width="40" /></span>
+                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{auth()->user()->name}}</span><span class="user-status">Available</span></div><span><img class="round" src="uploads/{{auth()->user()->profile_image}}" alt="{{auth()->user()->name}}" height="40" width="40" /></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="myprofile"><i class="feather icon-user"></i> View Profile</a><a class="dropdown-item" href="account_settings"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="javascript:void(0)"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="javascript:void(0)"><i class="feather icon-message-square"></i> Chats</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="logout"><i class="feather icon-power"></i> Logout</a>
