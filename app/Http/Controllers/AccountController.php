@@ -38,7 +38,7 @@ class AccountController extends Controller
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
         $filenameToStore = $user.'.'.$extension;
-        $path = $request->file('profile_image')->storeAs('https://brickng.com/essentials/profile_pix', $filenameToStore);
+        $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
       }
