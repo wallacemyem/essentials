@@ -33,11 +33,13 @@ class AccountController extends Controller
           // = unique_code(8);
       //image cover_image
       if($request->hasFile('profile_image')){
+        $file = $request->file('profile_image');
         $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
         $filenameToStore = $user.'.'.$extension;
+        Storage::disk('public')->put($filenameToStore.'.'.$extension,  File::get($file));
         $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
