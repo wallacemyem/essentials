@@ -70,6 +70,7 @@
                 <div class="col-lg-5 col-md-6">
                     <h1 class="text-white">{{ __('Welcome')}} {{auth()->user()->name}} </h1>
                 </div>
+                <br>
                 <div class="col-lg-5 col-md-6">
                     <h1 class="text-white">{{ __('Click on Dashboard to continue')}}</h1>
                 </div>

@@ -31,8 +31,7 @@
                         <span>{{ __('Settings') }}</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="logout" class="dropdown-item" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+                    <a href="logout" class="dropdown-item">
                         <i class="ni ni-user-run"></i>
                         <span>{{ __('Logout') }}</span>
                     </a>
