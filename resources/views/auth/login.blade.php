@@ -16,7 +16,7 @@
                             <br>
 
                         </div>
-                        <form role="form" method="POST" action="">
+                        <form role="form" method="POST" action="login">
                             @csrf
 
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} mb-3">
