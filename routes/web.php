@@ -31,12 +31,6 @@ Route::post('files', 'FilesController@files');
 Route::view('bb', 'pages.bb');
 Route::post('store' , 'TaskController@store');
 
-// Authentication routes...
-Route::get('logon', 'AuthenticationController@login');
-Route::post('login', 'AuthController@login');
-Route::post('register', 'AuthController@register');
-Route::get('logout', 'AuthController@logout');
-
 // Registration routes...
 Route::get('register', 'AuthenticationController@register');
 Route::post('register', 'AuthenticationController@register');
@@ -49,5 +43,10 @@ Route::post('unlock', 'LockScreenController@unlock');
 //Route::auth(['verify' => true]);
 
 Auth::routes();
+// Authentication routes...
+Route::get('logon', 'AuthenticationController@login');
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
+Route::get('logout', 'AuthController@logout');
 
 Route::post('/auth-login/validate', 'Auth\LoginController@validate_api');
