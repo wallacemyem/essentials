@@ -95,7 +95,7 @@
                         <div class="form-group">
                           <div class="controls">
                             <label for="account-username">Email</label>
-                            {{Form::text('email' , auth()->user()->email , ['class' => 'form-control' , 'placeholder' => 'Email'])}}
+                            {{Form::text('email' , auth()->user()->email , ['class' => 'form-control' , 'placeholder' => 'Email'] disabled)}}
                           </div>
                         </div>
                       </div>
