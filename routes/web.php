@@ -44,6 +44,7 @@ Route::post('unlock', 'LockScreenController@unlock');
 
 //Auth::routes();
 // Authentication routes...
+Route::get('login', 'AuthenticationController@login');
 Route::get('logon', 'AuthenticationController@login');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
