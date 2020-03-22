@@ -42,7 +42,7 @@ Route::post('unlock', 'LockScreenController@unlock');
 //update accountSwitch1
 //Route::auth(['verify' => true]);
 
-Auth::routes();
+//Auth::routes();
 // Authentication routes...
 Route::get('logon', 'AuthenticationController@login');
 Route::post('login', 'AuthController@login');
