@@ -50,7 +50,7 @@ function checkTime(i) {
                 <img src="{{ asset('images/elements/decore-right.png')}}" class="img-right" alt="card-img-right">
                 <div class="avatar avatar-xl bg-primary shadow mt-0">
                     <div class="avatar-content">
-                      <img src="storage/profile_image/{{auth()->user()->profile_image}}" class="mx-auto mb-1" alt="{{auth()->user()->name}}">
+                      <img src="uploads/{{auth()->user()->profile_image}}" class="mx-auto mb-1" alt="{{auth()->user()->name}}">
                     </div>
                 </div>
                 <div class="text-center">
