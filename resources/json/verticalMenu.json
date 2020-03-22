@@ -5,8 +5,9 @@
   {"url":"","navheader":"Apps","icon":""},
     {"url":"docs", "name":"Documents", "icon":"feather icon-folder", "i18n":"admin.docs"},
     {"url":"times", "name":"Timetable", "icon":"feather icon-life-buoy", "i18n":"admin.times"},
+    {"url":"assignments", "name":"Assignments", "icon":"feather icon-align-justify", "i18n":"admin.assignments"},
 
   {"url":"","navheader":"Account","icon":""},
-    {"url":"account", "name":"Settings", "slug":"account", "icon":"feather icon-crosshair", "i18n":"admin.account-settings"}
+    {"url":"account", "name":"Settings", "slug":"account", "icon":"feather icon-settings", "i18n":"admin.account-settings"}
 
 ]}
