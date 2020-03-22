@@ -19,6 +19,7 @@ Route::get('/', 'AdminController@dashboard');
 Route::get('dashboard', 'AdminController@dashboard');
 
 // Route Components
+Route::get('assignments', 'AdminController@assignments');
 Route::get('docs', 'AdminController@docs');
 Route::get('myprofile', 'AdminController@mprofile');
 Route::get('times', 'AdminController@times');

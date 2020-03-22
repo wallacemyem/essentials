@@ -68,6 +68,17 @@ class AdminController extends Controller
         ]);
     }
 
+    //admin Assignments
+    public function assignments(){
+        $pageConfigs = [
+            'pageHeader' => false
+        ];
+      
+        return view('/pages/assignments', [
+            'pageConfigs' => $pageConfigs
+        ]);
+    }
+
     //admin Task
     public function docs(){
       // IDEA: just make docs variable
