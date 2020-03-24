@@ -69,7 +69,7 @@ function checkTime(i) {
                           <i class="feather icon-users text-primary font-medium-5"></i>
                       </div>
                   </div>
-                  <h2 class="text-bold-700 mt-1 mb-25">92.6k</h2>
+                  <h2 class="text-bold-700 mt-1 mb-25">{{DB::table('users')->count()}}</h2>
                   <p class="mb-0">Subscribers Gained</p>
               </div>
               <div class="card-content">
@@ -85,7 +85,7 @@ function checkTime(i) {
                             <i class="feather icon-package text-warning font-medium-5"></i>
                         </div>
                     </div>
-                    <h2 class="text-bold-700 mt-1 mb-25">97.5K</h2>
+                    <h2 class="text-bold-700 mt-1 mb-25">{{DB::table('tasks')->count()}}</h2>
                     <p class="mb-0">Number of Task</p>
                 </div>
                 <div class="card-content">
