@@ -50,7 +50,7 @@ function checkTime(i) {
                 <img src="{{ asset('images/elements/decore-right.png')}}" class="img-right" alt="card-img-right">
                 <div class="avatar avatar-xl bg-primary shadow mt-0">
                     <div class="avatar-content">
-                      <img src="storage/profile_image/{{auth()->user()->profile_image}}" class="mx-auto mb-1" alt="{{auth()->user()->name}}">
+                      <img src="uploads/{{auth()->user()->profile_image}}" class="mx-auto mb-1" alt="{{auth()->user()->name}}">
                     </div>
                 </div>
                 <div class="text-center">
@@ -69,7 +69,7 @@ function checkTime(i) {
                           <i class="feather icon-users text-primary font-medium-5"></i>
                       </div>
                   </div>
-                  <h2 class="text-bold-700 mt-1 mb-25">92.6k</h2>
+                  <h2 class="text-bold-700 mt-1 mb-25">{{DB::table('users')->count()}}</h2>
                   <p class="mb-0">Subscribers Gained</p>
               </div>
               <div class="card-content">
@@ -85,7 +85,7 @@ function checkTime(i) {
                             <i class="feather icon-package text-warning font-medium-5"></i>
                         </div>
                     </div>
-                    <h2 class="text-bold-700 mt-1 mb-25">97.5K</h2>
+                    <h2 class="text-bold-700 mt-1 mb-25">{{DB::table('tasks')->count()}}</h2>
                     <p class="mb-0">Number of Task</p>
                 </div>
                 <div class="card-content">
@@ -252,7 +252,7 @@ function checkTime(i) {
           </div>
           <div class="card-content">
             <div class="card-body">
-              <img class="img-fluid" src="storage/profile_image/{{auth()->user()->profile_image}}" alt="{{auth()->user()->name}}">
+              <img class="img-fluid" src="uploads/{{auth()->user()->profile_image}}" alt="{{auth()->user()->name}}">
               <div class="d-flex justify-content-start mt-2">
                 <div class="icon-like mr-2">
                   <i class="feather icon-thumbs-up text-success font-medium-5 align-middle"></i>

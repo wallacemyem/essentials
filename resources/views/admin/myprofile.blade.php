@@ -16,7 +16,7 @@
               <img class="img-fluid bg-cover rounded-0 w-100" src="{{ asset('images/profile/user-uploads/cover.jpg') }}" alt="User Profile Image">
             </div>
             <div class="profile-img-container d-flex align-items-center justify-content-between">
-              <img src="storage/profile_image/{{auth()->user()->profile_image}}" class="rounded-circle img-border box-shadow-1" alt="{{auth()->user()->name}}">
+              <img src="uploads/{{auth()->user()->profile_image}}" class="rounded-circle img-border box-shadow-1" alt="{{auth()->user()->name}}">
               <div class="float-right">
                 <button type="button" class="btn btn-icon btn-icon rounded-circle btn-primary mr-1">
                   <i class="feather icon-edit-2"></i>

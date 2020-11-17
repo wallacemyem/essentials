@@ -34,12 +34,14 @@ class FilesController extends Controller
           // = unique_code(8);
       //image cover_image
       if($request->hasFile('img')){
+        $file = $request->file('img');
         $filenameWithExt = $request->file('img')->getClientOriginalName();
         $filesize = $request->file('img')->getSize();
         $filenameUq = md5(uniqid(rand(), true));
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $fileExtension = $request->file('img')->getClientOriginalExtension();
         $filenameToStore = $filename.'_'.time().'.'.$fileExtension;
+        Storage::disk('public')->put($filename.'_'.time().'.'.$extension,  File::get($file));
         $path = $request->file('img')->storeAs('public/files', $filenameToStore);
       }else{
         $filesize = '0';

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Route;
 
 // Route url
 Route::get('/', 'AdminController@dashboard');
@@ -19,6 +19,7 @@ Route::get('/', 'AdminController@dashboard');
 Route::get('dashboard', 'AdminController@dashboard');
 
 // Route Components
+Route::get('assignments', 'AdminController@assignments');
 Route::get('docs', 'AdminController@docs');
 Route::get('myprofile', 'AdminController@mprofile');
 Route::get('times', 'AdminController@times');
@@ -31,12 +32,6 @@ Route::post('files', 'FilesController@files');
 Route::view('bb', 'pages.bb');
 Route::post('store' , 'TaskController@store');
 
-// Authentication routes...
-Route::get('/login', 'AuthenticationController@login');
-Route::post('login', 'AuthController@login');
-Route::post('register', 'AuthController@register');
-Route::get('logout', 'AuthController@logout');
-
 // Registration routes...
 Route::get('register', 'AuthenticationController@register');
 Route::post('register', 'AuthenticationController@register');
@@ -46,8 +41,14 @@ Route::get('plock', 'LockScreenController@viewLockScreen');
 Route::post('unlock', 'LockScreenController@unlock');
 
 //update accountSwitch1
-Route::auth(['verify' => true]);
+//Route::auth(['verify' => true]);
 
-Auth::routes();
+//Auth::routes();
+// Authentication routes...
+Route::get('login', 'AuthenticationController@login');
+Route::get('logon', 'AuthenticationController@login');
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
+Route::get('logout', 'AuthController@logout');
 
 Route::post('/auth-login/validate', 'Auth\LoginController@validate_api');

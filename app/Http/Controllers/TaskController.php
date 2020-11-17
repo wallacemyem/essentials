@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
 
 
 use App\Http\Requests\TaskRequest;
@@ -10,6 +11,12 @@ use App\Http\Controllers\Controller;
 
 class TaskController extends Controller
 {
+
+
+    public function __construct()
+  {
+      $this->middleware('auth');
+  }
 
     /**
      * Store a newly created resource in storage.

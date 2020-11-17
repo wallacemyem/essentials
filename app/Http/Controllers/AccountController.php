@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -10,6 +12,11 @@ use DB;
 
 class AccountController extends Controller
 {
+
+   public function __construct()
+  {
+      $this->middleware('auth');
+  }
     //
     /**
      * Update the profile
@@ -33,12 +40,14 @@ class AccountController extends Controller
           // = unique_code(8);
       //image cover_image
       if($request->hasFile('profile_image')){
+        $file = $request->file('profile_image');
         $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $user = auth()->user()->username;
         $extension = $request->file('profile_image')->getClientOriginalExtension();
         $filenameToStore = $user.'.'.$extension;
-        $path = $request->file('profile_image')->storeAs('public/profile_image', $filenameToStore);
+        Storage::disk('public')->put($user.'.'.$extension,  File::get($file));
+        $path = $request->file('profile_image')->storeAs('profile_image', $filenameToStore);
       }else{
         $filenameToStore = auth()->user()->profile_image;
       }
